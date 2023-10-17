@@ -3,7 +3,6 @@ using Azure.AI.OpenAI;
 using Microsoft.Extensions.Configuration;
 using VectorIndex;
 
-// implement configuration builder retrieving the values from appsettings.json
 var config = new ConfigurationBuilder()
     .AddJsonFile("appsettings.json")
     .Build();
