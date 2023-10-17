@@ -1,0 +1,82 @@
+{
+    "@odata.context": "https://mgr-search-playground.search.windows.net/$metadata#indexes/$entity",
+    "@odata.etag": "\"0x8DBCE9670824C88\"",
+    "name": "document-comparison",
+    "fields": [
+      {
+        "name": "key",
+        "type": "Edm.String",
+        "searchable": true,
+        "filterable": true,
+        "retrievable": true,
+        "sortable": true,
+        "facetable": true,
+        "key": true,
+        "synonymMaps": []
+      },
+      {
+        "name": "documentId",
+        "type": "Edm.String",
+        "searchable": true,
+        "filterable": true,
+        "retrievable": true,
+        "sortable": true,
+        "facetable": true,
+        "key": false,
+        "synonymMaps": []
+      },
+      {
+        "name": "chapter",
+        "type": "Edm.String",
+        "searchable": true,
+        "filterable": false,
+        "retrievable": true,
+        "sortable": false,
+        "facetable": false,
+        "key": false,
+        "analyzer": "en.microsoft",
+        "synonymMaps": []
+      },
+      {
+        "name": "vector",
+        "type": "Collection(Edm.Single)",
+        "searchable": true,
+        "filterable": false,
+        "retrievable": true,
+        "sortable": false,
+        "facetable": false,
+        "key": false,
+        "dimensions": 1536,
+        "vectorSearchConfiguration": "vectorConfig",
+        "synonymMaps": []
+      }
+    ],
+    "scoringProfiles": [],
+    "corsOptions": {
+      "allowedOrigins": [
+        "*"
+      ],
+      "maxAgeInSeconds": 300
+    },
+    "suggesters": [],
+    "analyzers": [],
+    "normalizers": [],
+    "tokenizers": [],
+    "tokenFilters": [],
+    "charFilters": [],
+    "vectorSearch": {
+      "algorithmConfigurations": [
+        {
+          "name": "vectorConfig",
+          "kind": "hnsw",
+          "hnswParameters": {
+            "metric": "cosine",
+            "m": 4,
+            "efConstruction": 400,
+            "efSearch": 500
+          },
+          "exhaustiveKnnParameters": null
+        }
+      ]
+    }
+  }
